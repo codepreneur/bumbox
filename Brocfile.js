@@ -17,4 +17,13 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-module.exports = app.toTree();
+var testLoader = pickFiles('tests/', {
+  srcDir: '/',
+  files: ['bumbox-test-loader.js'],
+  destDir: '/assets'
+});
+
+module.exports = mergeTrees([
+  app.toTree(),
+  testLoader
+], {overwrite: true});
