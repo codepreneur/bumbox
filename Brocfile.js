@@ -20,4 +20,3 @@ var app = new EmberApp();
 
 
 module.exports = app.toTree();
-module.exports = app.toTree();
