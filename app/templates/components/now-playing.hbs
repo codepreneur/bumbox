@@ -1,5 +1,5 @@
 {{#if song}}
-  <img class="now-playing-artwork" src="{{song.artwork}}">
+  <img class="now-playing-artwork" {{bind-attr src=song.artwork}}>
   <div class="now-playing-body">
     <p class="now-playing-details">
       <span class="now-playing-name">{{song.name}}</span> -

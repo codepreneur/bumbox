@@ -2,7 +2,7 @@
   {{#each}}
     <div class="album">
       {{#link-to 'album' this}}
-        <img src="{{artwork}}">
+        <img {{bind-attr src=artwork}}>
       {{/link-to}}
       <p class="album-name">{{name}}</p>
       <p class="album-artist">{{artist}}</p>

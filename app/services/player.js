@@ -2,6 +2,7 @@ import Ember from 'ember';
 var run = Ember.run;
 
 export default Ember.Service.extend({
+  availableIn: 'components',
   isPlaying: false,
   currentTime: 0,
 
