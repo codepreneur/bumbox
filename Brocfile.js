@@ -1,6 +1,8 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var pickFiles = require('broccoli-static-compiler');
+var mergeTrees = require('broccoli-merge-trees');
 
 var app = new EmberApp();
 
@@ -18,5 +20,13 @@ var app = new EmberApp();
 // along with the exports of each module as its value.
 
 
+var testLoader = pickFiles('tests/', {
+  srcDir: '/',
+  files: ['bumbox-test-loader.js'],
+  destDir: '/assets'
+});
 
-module.exports = app.toTree();
+module.exports = mergeTrees([
+  app.toTree(),
+  testLoader
+], {overwrite: true});

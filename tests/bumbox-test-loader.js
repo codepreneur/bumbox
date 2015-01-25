@@ -13,6 +13,7 @@ function isTestFile(name) {
 }
 
 function paddedStepNumber(name) {
+  console.log(name);
   return name.match(/step-(\d+)-test$/)[1];
 }
 
