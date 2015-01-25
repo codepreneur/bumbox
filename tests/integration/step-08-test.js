@@ -91,3 +91,12 @@ test("An Album correctly calculates songCount", function() {
 
   equal(album.get('songCount'), 1, "removing a song decreases the songCount");
 });
+
+test("The correct song count for albums is displayed", function() {
+  visit('/');
+
+  andThen(function() {
+    equal(contentOf('.song-count:first'), '4 songs', "The first album's song count is correct");
+  });
+});
+
